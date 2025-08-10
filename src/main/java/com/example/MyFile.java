@@ -34,6 +34,10 @@ public class MyFile
     
     public void read( File file ) throws MyException, IOException
     {
+        if( file == null ){
+            throw new MyException("Переданый объект не может быть пустым!");
+        }
+        
         this.fileInputStream = new FileInputStream(file);
         
         int i;
@@ -47,12 +51,18 @@ public class MyFile
 
     public void write(File file, String text) throws MyException, IOException
     {
+        if( file == null ){
+            throw new MyException("Переданый объект не может быть пустым!");
+        }
         this.fileOutputStream = new FileOutputStream(file);
         this.fileOutputStream.write(text.getBytes());
     }
 
     public void write(File file, String text, boolean append) throws MyException, IOException
     {
+        if( file == null ){
+            throw new MyException("Переданый объект не может быть пустым!");
+        }
         this.fileOutputStream = new FileOutputStream(file, append);
         this.fileOutputStream.write("\n".getBytes());
         this.fileOutputStream.write(text.getBytes());

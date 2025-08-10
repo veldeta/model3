@@ -8,12 +8,13 @@ public class Main {
     @SuppressWarnings("resource")
     public static void main(String[] args) throws MyException {
         MyFile myfile = new MyFile();
-        
         try{
 
             File file = myfile.open("D://java/model3/src/main/java/com", "Hello.txt");
+            // File file = null;
+            
 
-            myfile.write(file, (new Scanner(System.in)).nextLine(), true);
+            myfile.write(file, (new Scanner(System.in, "Cp1251")).nextLine(), true);
             
             myfile.read(file);
 

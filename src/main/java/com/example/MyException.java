@@ -14,6 +14,6 @@ public class MyException extends Exception {
 
     public String getCoder()
     {
-        return "Быдлокодер!";
+        return "Message: " + this.getMessage();
     }
 }
