@@ -50,11 +50,7 @@ public class MyFile
                 x = false;
             }
         } while (i != -1);
-
-        // while ((i = fileInputStream.read()) != -1)
-        // {
-        //     System.out.print((char)i);
-        // }
+        
         System.out.println();
     }
 
