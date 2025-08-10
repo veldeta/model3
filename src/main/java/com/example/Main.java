@@ -14,7 +14,7 @@ public class Main {
             // File file = null;
             
 
-            myfile.write(file, (new Scanner(System.in, "Cp1251")).nextLine(), true);
+            myfile.write(file, (new Scanner(System.in)).nextLine(), true);
             
             myfile.read(file);
 

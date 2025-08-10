@@ -37,15 +37,24 @@ public class MyFile
         if( file == null ){
             throw new MyException("Переданый объект не может быть пустым!");
         }
-        
+
         this.fileInputStream = new FileInputStream(file);
         
         int i;
+        boolean x = true;
+        do {
+            if ((i = fileInputStream.read()) == -1 && x) {
+                throw new MyException("Файл пуст");
+            } else {
+                System.out.print((char)i);
+                x = false;
+            }
+        } while (i != -1);
 
-        while ((i = fileInputStream.read()) != -1)
-        {
-            System.out.print((char)i);
-        }
+        // while ((i = fileInputStream.read()) != -1)
+        // {
+        //     System.out.print((char)i);
+        // }
         System.out.println();
     }
 
@@ -64,8 +73,8 @@ public class MyFile
             throw new MyException("Переданый объект не может быть пустым!");
         }
         this.fileOutputStream = new FileOutputStream(file, append);
-        this.fileOutputStream.write("\n".getBytes());
         this.fileOutputStream.write(text.getBytes());
+        this.fileOutputStream.write("\n".getBytes());
     }
 
     public void close() throws MyException, IOException
