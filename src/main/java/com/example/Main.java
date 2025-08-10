@@ -13,14 +13,18 @@ public class Main {
 
             File file = myfile.open("D://java/model3/src/main/java/com", "Hello.txt");
 
+            myfile.write(file, (new Scanner(System.in)).nextLine(), true);
+            
             myfile.read(file);
 
-            myfile.write(file, (new Scanner(System.in)).nextLine(), true);
+        } catch (MyException e) {
+            
+            System.out.println(e.getCoder());
 
-        } catch (MyException | IOException e) {
+        } catch (IOException e) {
 
             System.out.println(e.getMessage());
-
+            
         } finally {
 
             try {

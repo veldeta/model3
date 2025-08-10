@@ -12,8 +12,8 @@ public class MyException extends Exception {
         super(message, e);
     }
 
-    public static void ex()
+    public String getCoder()
     {
-        
+        return "Быдлокодер!";
     }
 }
